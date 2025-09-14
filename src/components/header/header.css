@@ -6,8 +6,12 @@ header{
     z-index: 44;
 }
 nav ul{
-    display: flex;
+    display: none;   /* start hidden */
+     flex-direction: column;
     gap:10px;
+}
+body.nav-open nav ul {
+  display: flex;
 }
 nav a {
     text-transform: capitalize;

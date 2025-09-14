@@ -113,8 +113,8 @@ footer .icon{
 }
 @media (max-width: 620px){
   .grid3 {
-    display: grid;               
-    grid-template-columns: 1fr;   /* stack vertically */
+    display: grid !important ;               
+    grid-template-columns: 1fr !important;   /* stack vertically */
     gap: 20px;
     overflow-x: hidden;
     justify-items: center;
@@ -291,6 +291,30 @@ footer .icon{
   .openProfile {
     display: none !important;
 }
+
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;          /* space between icons */
+    flex-wrap: nowrap;  /* all in one row */
+  }
+
+  footer .icon {
+    display: inline-block;
+    font-size: 20px;
+    margin: 0 8px;
+    width: auto;
+    height: auto;
+  }
+
+
   
     
+}
+@media (min-width: 768px) {
+  nav ul {
+    display: flex;        /* always visible on desktop */
+    flex-direction: row;  /* row layout */
+  }
 }

@@ -16,21 +16,31 @@ export const User = () => {
     const close = () =>{
         setProfileOpen(false)
     };
-    useEffect(() => {
+    
+
+useEffect(() => {
   const profileBtn = document.querySelector(".profile .img");
+
   if (!profileBtn) return;
 
-  const toggleNav = () => document.body.classList.toggle("nav-open");
+  const toggleNav = () => {
+    document.body.classList.toggle("nav-open");
+  };
+
   profileBtn.addEventListener("click", toggleNav);
 
-  const navLinks = document.querySelectorAll("nav ul li a");
-  navLinks.forEach(link => link.addEventListener("click", () => document.body.classList.remove("nav-open")));
+   document.querySelectorAll("nav ul li a").forEach(link => {
+    link.addEventListener("click", () => {
+      document.body.classList.remove("nav-open");
+    });
+  });
 
+  // Cleanup to prevent duplicate listeners
   return () => {
     profileBtn.removeEventListener("click", toggleNav);
-    navLinks.forEach(link => link.removeEventListener("click", () => document.body.classList.remove("nav-open")));
   };
 }, []);
+
 
 
     
